@@ -50,6 +50,10 @@ $aktif = 'artikel';
 							<?= substr($artikel['isi'], 0, 150) . '...' ?>
 						</div>
 					</div>
+					<div class="post mb-2">
+							
+							<span class="judul"><a ><?= $artikel['nama_pembuat'] ?></a></span>
+						</div>
 					<hr>
 				</div>
 				<?php endwhile; ?>
