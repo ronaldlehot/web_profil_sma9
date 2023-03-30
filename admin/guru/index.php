@@ -2,9 +2,23 @@
 require_once '../../koneksi.php';
 
 
-$query = mysqli_query($koneksi, "SELECT tbl_guru.id, tbl_guru.nama, tbl.nip, tbl_guru.alamat,tbl_guru.foto,tbl_guru.no_hp,tbl_guru.mata_pelajaran, tbl_pangkatgol.jenis_pangkatgol AS pangkatgol FROM tbl_guru LEFT JOIN tbl_pangkatgol ON tbl_guru.id_pangkatgol = tbl_pangkatgol.id");
+$query = mysqli_query($koneksi, "SELECT tbl_guru.id, tbl_guru.nama, tbl_guru.nip, tbl_guru.alamat,tbl_guru.foto,tbl_guru.no_hp,tbl_guru.mata_pelajaran, tbl_pangkatgol.jenis_pangkatgol AS pangkatgol FROM tbl_guru LEFT JOIN tbl_pangkatgol ON tbl_guru.id_pangkatgol = tbl_pangkatgol.id");
+
+// query left join untuk menggabungkan data dari dua tabel
+
+
+
+
+
+
+
+
 $no = 1;
 $active = 'master';
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +87,8 @@ $active = 'master';
 						        </tr>
 						    </thead>
 						    <tbody>
-						        <?php while($row = mysqli_fetch_assoc($query)) : ?>
+
+						         <?php while($row = mysqli_fetch_assoc($query)) : ?>
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><img src="../../images/guru/<?= $row['foto'] ?>" alt="" width="100%" class="img-thumbnail"></td>
@@ -88,7 +103,7 @@ $active = 'master';
 											<a style="margin-left: 3%;" href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin?')">Hapus</a>
 										</td>
 									</tr>
-								<?php endwhile; ?>
+									<?php endwhile; ?>
 						    </tbody>
 						</table>
 					</div>
