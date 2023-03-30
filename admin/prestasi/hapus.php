@@ -7,7 +7,7 @@ $id = $_GET['id'];
 $query = mysqli_query($koneksi, "SELECT foto FROM tbl_galeri WHERE id = {$id}");
 $row = mysqli_fetch_assoc($query);
 
-if(file_exists("../../images/gallery/" . $row['foto'])) unlink("../../images/gallery/" . $row['foto']) or die('foto tidak bisa dihapus');
+if(file_exists("../../images/prestasi/" . $row['foto'])) unlink("../../images/gallery/" . $row['foto']) or die('foto tidak bisa dihapus');
 
 $query = mysqli_query($koneksi, "DELETE FROM tbl_galeri WHERE id = {$id}");
 if($query){
