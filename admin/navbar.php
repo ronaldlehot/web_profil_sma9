@@ -1,6 +1,6 @@
 <?php
 require_once 'cek_session.php';
-$base_url = "http://localhost/V5-Web-Profil-Sekolah/" 
+$base_url = "http://localhost/webprofil_sma9/" 
 ?>
 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 	<div class="container">
