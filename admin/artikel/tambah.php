@@ -44,8 +44,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM tbl_kategori_artikel");
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="created_by">Nama Pembuat</label>
-								<input type="text" class="form-control" id="created_by" placeholder="Nama Pembuat" autocomplete="off" required="required" name="created_by">
+								<label for="nama_pembuat">Nama Pembuat</label>
+								<input type="text" class="form-control" id="nama_pembuat" placeholder="Nama Pembuat" autocomplete="off" required="required" name="nama_pembuat">
 							</div>
 							<div class="form-group">
 								<label for="foto">Foto</label>

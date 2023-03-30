@@ -63,13 +63,13 @@ $active = 'artikel';
 						        </tr>
 						    </thead>
 						    <tbody>
-						        <?php while($row = mysqli_fetch_assoc($query)) : ?>s
+						        <?php while($row = mysqli_fetch_assoc($query)) : ?>
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><img src="../../images/artikel/<?= $row['foto'] ?>" alt="<?= $row['judul'] ?>" width="100%" class="img-thumbnail"></td>
 										<td><a href="detail.php?id=<?= $row['id'] ?>"><?= $row['judul'] ?></a></td>
 										<td><?= isset($row['nama_kategori']) ? $row['nama_kategori'] : '-' ?></td>
-										<td><?= isset($row['created_by']) ?></td>
+										<td><?= isset($row['nama_pembuat']) ?$row['nama_pembuat'] : '-' ?> </td>
 
 										<td>
 											<a href="ubah.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm">Ubah</a>

@@ -7,7 +7,7 @@ require_once '../../koneksi.php';
 $judul = mysqli_real_escape_string($koneksi, isset($_POST['judul']) ? $_POST['judul'] : '');
 $id_kategori = mysqli_real_escape_string($koneksi, isset($_POST['id_kategori']) ? $_POST['id_kategori'] : '');
 $isi = mysqli_real_escape_string($koneksi, isset($_POST['isi']) ? $_POST['isi'] : '');
-$created_by = mysqli_real_escape_string($koneksi, isset($_POST['created_by']) ? $_POST['created_by'] : '');
+$nama_pembuat = mysqli_real_escape_string($koneksi, isset($_POST['nama_pembuat']) ? $_POST['nama_pembuat'] : '');
 $tanggal = date('Ymd');
 
 // persiapan upload foto
@@ -26,7 +26,7 @@ if($_FILES['foto']['error'] == 0){
 	if($_FILES['foto']['size'] < 1000000){
 		if (file_exists('../../images/artikel/' . $nama_foto)) unlink('../../images/artikel/' . $nama_foto);
 
-		$query = mysqli_query($koneksi, "INSERT INTO tbl_artikel (judul, isi, tanggal, foto, id_kategori,created_by) VALUES('$judul', '$isi', '$tanggal', '$nama_foto', $id_kategori,$created_by)") or die(mysqli_error($koneksi));
+		$query = mysqli_query($koneksi, "INSERT INTO tbl_artikel (judul, isi, tanggal, foto,nama_pembuat, id_kategori) VALUES('$judul', '$isi', '$tanggal', '$nama_foto', '$nama_pembuat',$id_kategori)") or die(mysqli_error($koneksi));
 		move_uploaded_file($asal, $tujuan . $nama_foto) or die('gagal upload foto');
 		if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Ditambahkan!';
