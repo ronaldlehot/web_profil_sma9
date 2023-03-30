@@ -2,21 +2,9 @@
 require_once '../../koneksi.php';
 
 
-$query = mysqli_query($koneksi, "SELECT tbl_guru.id, tbl_guru.nama, tbl_guru.nip, tbl_guru.alamat,tbl_guru.foto,tbl_guru.no_hp,tbl_guru.mata_pelajaran, tbl_pangkatgol.jenis_pangkatgol AS pangkatgol FROM tbl_guru LEFT JOIN tbl_pangkatgol ON tbl_guru.id_pangkatgol = tbl_pangkatgol.id");
-
-// query left join untuk menggabungkan data dari dua tabel
-
-
-
-
-
-
-
-
+$query = mysqli_query($koneksi, "SELECT id,nip, nama, alamat, foto, no_hp, mata_pelajaran,jenis_pangkatgol FROM tbl_guru");
 $no = 1;
 $active = 'master';
-
-
 
 
 ?>
@@ -95,7 +83,7 @@ $active = 'master';
 										<td><a href="detail.php?id=<?= $row['id'] ?>"><?= $row['nama'] ?></a></td>
 										<td><?= $row['nip'] ?></td>
 										<td><?= $row['no_hp'] ?></td>
-										<td><?= $row['pangkatgol'] ?></td>
+										<td><?= $row['jenis_pangkatgol'] ?></td>
 										<td><?= $row['mata_pelajaran'] ?></td>
 										<td><?= $row['alamat'] ?></td>
 										<td class="aksi">

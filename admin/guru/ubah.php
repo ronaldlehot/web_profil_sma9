@@ -75,6 +75,13 @@ $active = 'master';
 								</div>
 							</div>
 							<div class="row">
+							<div class="col">
+									<div class="form-group">
+									<label for="pangkatgol">Pangkatgol</label>
+										<input type="text"  value="<?= $guru['jenis_pangkatgol'] ?>"  class="form-control" id="jenis_pangkatgol" placeholder="jenis pangkatgol" autocomplete="off" required="required" name="jenis_pangkatgol">
+										</select>
+									</div>
+								</div>
 								<div class="col">
 									<div class="form-group">
 										<label for="foto">Foto</label>

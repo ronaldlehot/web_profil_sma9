@@ -2,8 +2,6 @@
 
 $active = 'master'; 
 
-require_once '../../koneksi.php';
-$query = mysqli_query($koneksi, "SELECT id, jenis_pangkatgol FROM tbl_pangkatgol");
 ?>
 
 <!DOCTYPE html>
@@ -77,10 +75,7 @@ $query = mysqli_query($koneksi, "SELECT id, jenis_pangkatgol FROM tbl_pangkatgol
 								<div class="col">
 									<div class="form-group">
 									<label for="pangkatgol">Pangkatgol</label>
-										<select name="id_pangkatgol" id="pangkatgol" class="form-control">
-											<?php while($row = mysqli_fetch_assoc($query)) : ?>
-												<option value="<?= $row['id'] ?>"><?= $row['jenis_pangkatgol'] ?></option>
-											<?php endwhile; ?>
+										<input type="text" class="form-control" id="jenis_pangkatgol" placeholder="jenis pangkatgol" autocomplete="off" required="required" name="jenis_pangkatgol">
 										</select>
 									</div>
 								</div>

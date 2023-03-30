@@ -12,6 +12,7 @@ $tempat_lahir = mysqli_real_escape_string($koneksi, isset($_POST['tempat_lahir']
 $tanggal_lahir = mysqli_real_escape_string($koneksi, isset($_POST['tanggal_lahir']) ? $_POST['tanggal_lahir'] : '');
 $mata_pelajaran = mysqli_real_escape_string($koneksi, isset($_POST['mata_pelajaran']) ? $_POST['mata_pelajaran'] : '');
 $alamat = mysqli_real_escape_string($koneksi, isset($_POST['alamat']) ? $_POST['alamat'] : '');
+$jenis_pangkatgol = mysqli_escape_string($koneksi, $_POST['jenis_pangkatgol']);
 $id = $_GET['id'];
 
 // persiapan upload foto
@@ -41,7 +42,7 @@ if($_FILES['foto']['error'] == 0){
 		move_uploaded_file($asal, $tujuan . $nama_foto) or die('gagal upload foto');
 
 		// ubah data
-		$query = mysqli_query($koneksi, "UPDATE tbl_guru SET nama = '$nama', nip = $nip, jenis_kelamin = '$jenis_kelamin', no_hp = '$no_hp', tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', mata_pelajaran = '$mata_pelajaran', alamat = '$alamat', foto = '$nama_foto' WHERE id = $id") or die(mysqli_error($koneksi));
+		$query = mysqli_query($koneksi, "UPDATE tbl_guru SET nama = '$nama', nip = $nip, jenis_kelamin = '$jenis_kelamin', no_hp = '$no_hp', tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', mata_pelajaran = '$mata_pelajaran', alamat = '$alamat', foto = '$nama_foto', jenis_pangkatgol = '$jenis_pangkatgol' WHERE id = $id") or die(mysqli_error($koneksi));
 		if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Diubah!';
 			header('Location: index.php');
@@ -54,7 +55,7 @@ if($_FILES['foto']['error'] == 0){
 		header('Location: index.php');
 	}
 } else {
-	$query = mysqli_query($koneksi, "UPDATE tbl_guru SET nama = '$nama', nip = $nip, jenis_kelamin = '$jenis_kelamin', no_hp = '$no_hp', tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', mata_pelajaran = '$mata_pelajaran', alamat = '$alamat', foto = '$nama_foto' WHERE id = $id") or die(mysqli_error($koneksi));
+	$query = mysqli_query($koneksi, "UPDATE tbl_guru SET nama = '$nama', nip = $nip, jenis_kelamin = '$jenis_kelamin', no_hp = '$no_hp', tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', mata_pelajaran = '$mata_pelajaran', alamat = '$alamat', foto = '$nama_foto', jenis_pangkatgol = '$jenis_pangkatgol' WHERE id = $id") or die(mysqli_error($koneksi));
 
 	if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Diubah!';
