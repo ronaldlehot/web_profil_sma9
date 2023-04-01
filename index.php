@@ -332,7 +332,7 @@ $aktif = 'visi_misi';
         </div>
 
         <div class="tombol-selengkapnya">
-          <a href="" class="btn btn-more">Lihat Prestasi Lainnya</a>
+          <a href="prestasi.php" class="btn btn-more">Lihat Prestasi Lainnya</a>
         </div>
       </div>
     </section>
