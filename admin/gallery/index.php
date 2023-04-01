@@ -61,7 +61,7 @@ $active = 'gallery';
 						        </tr>
 						    </thead>
 						    <tbody>
-						        <?php while($row = mysqli_fetch_assoc($query)) : ?>s
+						        <?php while($row = mysqli_fetch_assoc($query)) : ?>
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><img src="../../images/gallery/<?= $row['foto'] ?>" width="100%" class="img-thumbnail"></td>

@@ -4,7 +4,7 @@ require_once '../koneksi.php';
 require_once 'cek_session.php';
 $query = mysqli_query($koneksi, "SELECT * FROM tbl_tentang_website WHERE id = 1");
 $tentang_website = mysqli_fetch_assoc($query);
-$active = 'tentang_website'; 
+$active = 'visi_misi'; 
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $active = 'tentang_website';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tentang Website - SMK Negeri 1 Wanareja</title>
+	<title>Sejarah Sekolah</title>
 	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -24,7 +24,7 @@ $active = 'tentang_website';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Tentang Website
+								Sejarah Sekolah
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>

@@ -15,7 +15,7 @@ $active = 'informasi';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ubah Artikel - SMK Negeri 1 Wanareja</title>
+	<title>Ubah Informasi</title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -27,7 +27,7 @@ $active = 'informasi';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Ubah Artikel
+								Ubah Informasi
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
@@ -41,7 +41,7 @@ $active = 'informasi';
 								<input type="text" value="<?= $artikel['judul'] ?>" class="form-control" id="judul" placeholder="judul artikel" autocomplete="off" required="required" name="judul">
 							</div>
 							<div class="form-group">
-								<label for="id_kategori">Kategori Artikel</label>
+								<label for="id_kategori">Kategori Informasi</label>
 								<select name="id_kategori" id="id_kategori" class="form-control">
 									<?php while($kategori = mysqli_fetch_assoc($query_kategori)) : ?>
 										<option value="<?= $kategori['id'] ?>" <?= $artikel['id_kategori'] == $kategori['id'] ? 'selected' : '' ?> ><?= $kategori['nama_kategori'] ?></option>

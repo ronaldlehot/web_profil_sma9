@@ -1,3 +1,11 @@
+<?php 
+
+require_once 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT * FROM tbl_struktur");
+$aktif = 'visi_misi';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,99 +36,16 @@
     <?php include 'header.php'; ?>
 
     <div class="tree">
+    <?php while($artikel = mysqli_fetch_assoc($query)) : ?>
       <ul>
-        <li>
-          <a href="#"><img src="images/pro2.webp" alt="" /><span>Kepala Sekolah</span></a>
-          <ul>
-            <li>
-              <a href="#"><img src="images/pro1.webp" alt="" /><span>Grand Child</span></a>
-              <ul>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><img src="images/pro1.webp" alt="" /><span>Child</span></a>
-              <ul>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-                <li>
-                  <a href="#"><img src="images/pro1.webp" alt="" /><span>Great Grand Child</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><img src="images/pro1.webp" alt="" /><span>Child</span></a>
-            </li>
-          </ul>
-        </li>
+      <img style="height: 1200px;" src="images/struktur/<?= $artikel['foto'] ?>" alt=""  class="post-img" />
       </ul>
+      
+      <?php endwhile; ?>
     </div>
 
     <!-- FOOTER -->
-    <footer>
-      <div class="kolom-footer">
-        <h3>Top Product</h3>
-        <li>Manage Reputation</li>
-        <li>Power Tools</li>
-        <li>Managed Website</li>
-        <li>Marketing Service</li>
-      </div>
-
-      <div class="kolom-footer">
-        <h3>Top Product</h3>
-        <li>Manage Reputation</li>
-        <li>Power Tools</li>
-        <li>Managed Website</li>
-        <li>Marketing Service</li>
-      </div>
-
-      <div class="kolom-footer">
-        <h3>Top Product</h3>
-        <li>Manage Reputation</li>
-        <li>Power Tools</li>
-        <li>Managed Website</li>
-        <li>Marketing Service</li>
-      </div>
-
-      <div class="kolom-footer">
-        <h3>Top Product</h3>
-        <li>Manage Reputation</li>
-        <li>Power Tools</li>
-        <li>Managed Website</li>
-        <li>Marketing Service</li>
-      </div>
-
-      <div class="kolom-footer">
-        <h3>News Letter</h3>
-        <p>You can trust us. We Only send promo offers</p>
-        <div class="subscribe">
-          <input type="text" placeholder="Your Email Address" />
-          <a href="#" class="yellow">SUBSCRIBE</a>
-        </div>
-      </div>
-
-      <div class="hak-cipta">
-        <p>Copyright ©SMA Negeri 9 Kupang 2022</p>
-
-        <div class="pro-links">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-linkedin-in"></i>
-        </div>
-      </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <script src="main.js"></script>
     <script>

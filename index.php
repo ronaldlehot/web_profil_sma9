@@ -1,3 +1,11 @@
+<?php 
+
+require_once 'koneksi.php';
+$query = mysqli_query($koneksi, "SELECT * FROM tbl_sambutan");
+$aktif = 'visi_misi';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,20 +62,19 @@
 
     <!-- New Sambutan -->
     <section id="sambutan" class="sambutan-container">
+    <?php while($artikel = mysqli_fetch_assoc($query)) : ?>
       <div class="row align-item-center">
         <div class="col-md-6 image">
-          <img src="images/Foto Guru/Kepsek (1).jpeg" width="70%" alt="Kepala SMANSEM" />
+          <img src="images/sambutan/<?= $artikel['foto'] ?>" width="70%" class="post-img" />
         </div>
         <div class="col-md-5 info">
           <h2>Sambutan Kepala Sekolah</h2>
           <p>
-            Remaja sekarang adalah calon-calon generasi penerus bangsa. Dengan bersekolah, kami dapat mengantar anak-anak untuk menentukan setiap masa depan mereka. Disini, mereka kami pupuk untuk dapat tumbuh menjadi mereka seutuhnya...
-          </p>
-          <div class="btn">
-            <a class="blue" href="#">Selengkapnya</a>
-          </div>
+          <?= $artikel['isi'] ?>
+        </p>
         </div>
       </div>
+      <?php endwhile; ?>
     </section>
 
     <!-- New Kalkulasi Data -->

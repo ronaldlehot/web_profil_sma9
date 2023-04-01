@@ -10,7 +10,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tbl_ketegori_informasi");
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tambah Artikel - SMK Negeri 1 Wanareja</title>
+	<title>Tambah Informasi </title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,7 +22,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tbl_ketegori_informasi");
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Tambah Artikel
+								Tambah Informasi
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
@@ -33,10 +33,10 @@ $query = mysqli_query($koneksi, "SELECT * FROM tbl_ketegori_informasi");
 						<form method="POST" action="proses_tambah.php" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="judul">Judul</label>
-								<input type="text" class="form-control" id="judul" placeholder="judul artikel" autocomplete="off" required="required" name="judul">
+								<input type="text" class="form-control" id="judul" placeholder="judul informasi" autocomplete="off" required="required" name="judul">
 							</div>
 							<div class="form-group">
-								<label for="id_kategori">Kategori Artikel</label>
+								<label for="id_kategori">Kategori Informasi</label>
 								<select name="id_kategori" id="id_kategori" class="form-control">
 									<?php while($kategori = mysqli_fetch_assoc($query)) : ?>
 										<option value="<?= $kategori['id'] ?>"><?= $kategori['nama_kategori'] ?></option>

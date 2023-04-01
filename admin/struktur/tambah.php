@@ -1,6 +1,6 @@
 <?php 
 
-$active = 'prestasi'; 
+$active = 'visi_misi'; 
 require_once '../../koneksi.php';
 
 
@@ -10,7 +10,7 @@ require_once '../../koneksi.php';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tambah Prestasi</title>
+	<title>Tambah Artikel - SMK Negeri 1 Wanareja</title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,7 +22,7 @@ require_once '../../koneksi.php';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Tambah Prestasi
+								Tambah Gallery
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
@@ -31,10 +31,7 @@ require_once '../../koneksi.php';
 					</div>
 					<div class="card-body">
 						<form method="POST" action="proses_tambah.php" enctype="multipart/form-data">
-							<div class="form-group">
-								<label for="judul">Judul</label>
-								<input type="text" class="form-control" id="judul" placeholder="judul Prestasi" autocomplete="off" required="required" name="judul">
-							</div>
+							
 							<div class="form-group">
 								<label for="foto">Foto</label>
 								<input type="file" class="form-control-file" id="foto" placeholder="foto artikel" autocomplete="off" required="required" name="foto">

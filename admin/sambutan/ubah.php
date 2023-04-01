@@ -1,16 +1,20 @@
 <?php 
 
-$active = 'prestasi'; 
+if(!isset($_GET['id']) || $_GET['id'] == '') header('Location: index.php');
+
 require_once '../../koneksi.php';
 
-
+$id = $_GET['id'];
+$query_artikel = mysqli_query($koneksi, "SELECT * FROM tbl_sambutan WHERE id = $id");
+$artikel = mysqli_fetch_assoc($query_artikel);
+$active = 'visi_misi'; 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tambah Prestasi</title>
+	<title>Ubah Informasi</title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,7 +26,7 @@ require_once '../../koneksi.php';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Tambah Prestasi
+								Ubah sambutan
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
@@ -30,17 +34,21 @@ require_once '../../koneksi.php';
 						</div>
 					</div>
 					<div class="card-body">
-						<form method="POST" action="proses_tambah.php" enctype="multipart/form-data">
-							<div class="form-group">
-								<label for="judul">Judul</label>
-								<input type="text" class="form-control" id="judul" placeholder="judul Prestasi" autocomplete="off" required="required" name="judul">
-							</div>
+						<form method="POST" action="proses_ubah.php?id=<?= $artikel['id'] ?>" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="foto">Foto</label>
-								<input type="file" class="form-control-file" id="foto" placeholder="foto artikel" autocomplete="off" required="required" name="foto">
+								<input type="file" class="form-control-file mb-2" id="foto" placeholder="foto artikel" autocomplete="off" name="foto">
+								*gambar sebelumnya <br>
+								<img src="../../images/informasi/<?= $artikel['foto'] ?>" width="500px" class="mt-2">
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-sm btn-primary" name="tambah">Tambah</button>
+								<label for="isi">Isi</label>
+								<textarea name="isi" id="ckeditor" class="ckeditor form-control">
+									<?= $artikel['isi'] ?>
+								</textarea>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-sm btn-primary" name="ubah">Ubah</button>
 								<button type="reset" class="btn btn-sm btn-danger" onclick="return confirm('apakah anda yakin?')">Batal</button>
 								<a href="index.php" class="btn btn-sm btn-secondary">Kembali</a>
 							</div>

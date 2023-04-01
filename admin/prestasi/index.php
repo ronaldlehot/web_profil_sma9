@@ -12,7 +12,7 @@ $active = 'prestasi';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Data Artikel - SMK Negeri 1 Wanareja</title>
+	<title>Data Prestasi</title>
 	<link rel="stylesheet" href="../../resources/datatables/datatables.min.css">
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
@@ -25,7 +25,7 @@ $active = 'prestasi';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Daftar Artikel
+								Daftar Prestasi
 							</div>
 							<div class="float-right">
 								<a href="tambah.php">Tambah</a>
@@ -61,7 +61,7 @@ $active = 'prestasi';
 						        </tr>
 						    </thead>
 						    <tbody>
-						        <?php while($row = mysqli_fetch_assoc($query)) : ?>s
+						        <?php while($row = mysqli_fetch_assoc($query)) : ?>
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><img src="../../images/prestasi/<?= $row['foto'] ?>" alt="<?= $row['judul'] ?>" width="100%" class="img-thumbnail"></td>

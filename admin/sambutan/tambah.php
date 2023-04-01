@@ -1,8 +1,8 @@
 <?php 
 
-$active = 'prestasi'; 
+$active = 'informasi'; 
 require_once '../../koneksi.php';
-
+$query = mysqli_query($koneksi, "SELECT * FROM tbl_sambutan");
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ require_once '../../koneksi.php';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Tambah Prestasi</title>
+	<title>Tambah Informasi </title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,7 +22,7 @@ require_once '../../koneksi.php';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Tambah Prestasi
+								Tambah sambutan
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
@@ -32,12 +32,12 @@ require_once '../../koneksi.php';
 					<div class="card-body">
 						<form method="POST" action="proses_tambah.php" enctype="multipart/form-data">
 							<div class="form-group">
-								<label for="judul">Judul</label>
-								<input type="text" class="form-control" id="judul" placeholder="judul Prestasi" autocomplete="off" required="required" name="judul">
-							</div>
-							<div class="form-group">
 								<label for="foto">Foto</label>
 								<input type="file" class="form-control-file" id="foto" placeholder="foto artikel" autocomplete="off" required="required" name="foto">
+							</div>
+							<div class="form-group">
+								<label for="isi">Isi</label>
+								<textarea name="isi" id="ckeditor" class="ckeditor form-control"></textarea>
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-sm btn-primary" name="tambah">Tambah</button>

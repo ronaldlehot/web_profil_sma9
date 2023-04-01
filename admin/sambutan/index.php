@@ -3,16 +3,16 @@ require_once '../../koneksi.php';
 
 
 
-$query = mysqli_query($koneksi, "SELECT tbl_informasi.*, tbl_ketegori_informasi.nama_kategori FROM tbl_informasi LEFT JOIN tbl_ketegori_informasi ON tbl_informasi.id_kategori = tbl_ketegori_informasi.id");
+$query = mysqli_query($koneksi, "SELECT * FROM tbl_sambutan");
 $no = 1;
-$active = 'informasi';
+$active = 'visi_misi';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Data Informasi</title>
+	<title>Data sambutan</title>
 	<link rel="stylesheet" href="../../resources/datatables/datatables.min.css">
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
@@ -25,7 +25,7 @@ $active = 'informasi';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Daftar Informasi
+								Daftar sambutan
 							</div>
 							<div class="float-right">
 								<a href="tambah.php">Tambah</a>
@@ -54,9 +54,8 @@ $active = 'informasi';
 						    <thead>
 						        <tr>
 						            <th>No</th>
-						            <th width="250px">Gambar Artikel</th>
-						            <th>Judul Artikel</th>
-						            <th>Kategori Artikel</th>
+						            <th width="250px">Gambar </th>
+						            <th>Isi </th>
 						            <th width="100px">Aksi</th>
 						        </tr>
 						    </thead>
@@ -64,9 +63,8 @@ $active = 'informasi';
 						        <?php while($row = mysqli_fetch_assoc($query)) : ?>
 									<tr>
 										<td><?= $no++ ?></td>
-										<td><img src="../../images/informasi/<?= $row['foto'] ?>" alt="<?= $row['judul'] ?>" width="100%" class="img-thumbnail"></td>
-										<td><a href="detail.php?id=<?= $row['id'] ?>"><?= $row['judul'] ?></a></td>
-										<td><?= isset($row['nama_kategori']) ? $row['nama_kategori'] : '-' ?></td>
+										<td><img src="../../images/sambutan/<?= $row['foto'] ?>" width="100%" class="img-thumbnail"></td>
+										<td><?= isset($row['isi']) ? $row['isi'] : '-' ?></td>
 										<td>
 											<a href="ubah.php?id=<?= $row['id'] ?>" class="btn btn-success btn-sm">Ubah</a>
 											<a href="hapus.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin?')">Hapus</a>

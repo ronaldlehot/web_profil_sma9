@@ -35,8 +35,18 @@ $base_url = "http://localhost/webprofil_sma9/"
 					<!-- <a class="dropdown-item" href="<?= $base_url ?>admin/ekskul/index.php">Data Ekskul</a> -->
 					<a class="dropdown-item" href="<?= $base_url ?>admin/pengguna/index.php">Data Pengguna</a>
 					<!-- <a class="dropdown-item" href="<?= $base_url ?>admin/kelas/index.php">Data kelas</a> -->
-					<a class="dropdown-item" href="<?= $base_url ?>admin/pangkatgol/index.php">Data Pangkat/Golongan</a>
-					<a class="dropdown-item" href="<?= $base_url ?>admin/jenisgtk/index.php">Jenis GTK</a>
+					<!-- <a class="dropdown-item" href="<?= $base_url ?>admin/pangkatgol/index.php">Data Pangkat/Golongan</a>
+					<a class="dropdown-item" href="<?= $base_url ?>admin/jenisgtk/index.php">Jenis GTK</a> -->
+				</div>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link <?= $active == 'visi_misi' ? 'active' : '' ?> dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Sejarah Sekolah</a>
+				<div class="dropdown-menu">
+				<a class="dropdown-item" href="<?= $base_url ?>admin/visi_misi.php">Visi Misi</a>
+				<a class="dropdown-item" href="<?= $base_url ?>admin/tentang_Website.php">Sejarah</a>
+				<a class="dropdown-item" href="<?= $base_url ?>admin/struktur/index.php">Struktur</a>
+				<a class="dropdown-item" href="<?= $base_url ?>admin/sambutan/index.php">Kata Sambutan</a>
 				</div>
 			</li>
 
@@ -47,14 +57,12 @@ $base_url = "http://localhost/webprofil_sma9/"
 				<a class="nav-link <?= $active == 'gallery' ? 'active' : '' ?> " href="<?= $base_url ?>admin/gallery/index.php">Gallery</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?= $active == 'visi_misi' ? 'active' : '' ?> " href="<?= $base_url ?>admin/visi_misi.php">Visi Misi</a>
+				
 			</li>
 			<!-- <li class="nav-item">
 				<a class="nav-link <?= $active == 'bukutamu' ? 'active' : '' ?> " href="<?= $base_url ?>admin/bukutamu.php">Bukutamu</a>
 			</li> -->
-			<li class="nav-item">
-				<a class="nav-link <?= $active == 'tentang_website' ? 'active' : '' ?> " href="<?= $base_url ?>admin/tentang_website.php">Tentang Website</a>
-			</li>
+
 			<li class="nav-item">
 				<a class="nav-link" href="<?= $base_url ?>admin/logout.php" onclick="return confirm('apakah anda yakin?')">Logout</a>
 			</li>

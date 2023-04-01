@@ -14,7 +14,7 @@ $active = 'prestasi';
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ubah Artikel - SMK Negeri 1 Wanareja</title>
+	<title>Ubah Prestasi</title>
 	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 </head>
 <body>
@@ -26,7 +26,7 @@ $active = 'prestasi';
 					<div class="card-header">
 						<div class="clearfix">
 							<div class="float-left">
-								Ubah Artikel
+								Ubah Prestasi
 							</div>
 							<div class="float-right">
 								<a href="index.php">Kembali</a>
